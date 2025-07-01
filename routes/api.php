@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -10,6 +11,9 @@ use App\Http\Controllers\UserController;
 
 
 Route::apiResource('users', UserController::class);
+
+
+Route::post('/login', [AuthController::class, 'login']);
 
 // Route::post('users/insert', [UserController::class, 'store']);
 
